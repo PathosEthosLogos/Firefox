@@ -1,3 +1,3 @@
 # Firefox
 
-![Image of the browser appearance](http://imgur.com/1jyClfs)
+![Image of the browser appearance](http://i.imgur.com/1jyClfs.png)
