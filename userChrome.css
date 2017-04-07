@@ -1,0 +1,218 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+.tab-close-button{display:none !important; }
+#urlbar-container { background-color: #444444 !important; }
+#urlbar { border-style: none !important; background-color: #444444 !important; }
+#urlbar-reload-button { visibility:collapse !important; }
+.urlbar-input-box {font-size: 14px !important; font-family: "Verdana"; text-align: center; background-color: #444444 !important; }
+scrollbar {visibility:collapse !important; }
+/*#back-button[disabled="true"] { display: none; }*/
+
+/* Edge Like Menu
+ * By Charisma<only#32mb.cn>
+ * http://doufu.ru
+ * Version 1.1 alpha4
+ */
+menupopup.textbox-contextmenu,
+popupset > menupopup,
+popupset > menupopup menupopup,
+popupset >*:not(menupopup) menupopup,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup,
+#do-not-styled-PlacesToolbar menupopup,
+#main-menubar menupopup,
+#sourceeditor-context
+{
+    -moz-appearance: none !important;
+    background-color:#f2f2f2 !important;
+    background-clip:padding-box!important;
+    max-width:240px;
+    border: 1px solid #ccc !important;
+}
+menupopup.textbox-contextmenu :-moz-any(menu,menuitem)[_moz-menuactive="true"],
+popupset > menupopup  :-moz-any(menu,menuitem)[_moz-menuactive="true"]:not([id^="BMB"]),
+popupset > menupopup  menupopup :-moz-any(menu,menuitem)[_moz-menuactive="true"]:not([id^="BMB"]),
+popupset >*:not(menupopup) menupopup :-moz-any(menu,menuitem)[_moz-menuactive="true"],
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup :-moz-any(menu,menuitem)[_moz-menuactive="true"],
+#do-not-styled-PlacesToolbar :-moz-any(menu,menuitem)[_moz-menuactive="true"],
+#main-menubar menupopup :-moz-any(menu,menuitem)[_moz-menuactive="true"],
+#sourceeditor-context :-moz-any(menu,menuitem)[_moz-menuactive="true"]
+{
+    background-color:#dadada !important;
+    -moz-appearance: none !important;
+}
+menupopup.textbox-contextmenu :-moz-any([disabled="true"])[_moz-menuactive="true"],
+popupset > menupopup  :-moz-any([disabled="true"])[_moz-menuactive="true"]:not([id^="BMB"]),
+popupset > menupopup  menupopup :-moz-any([disabled="true"])[_moz-menuactive="true"]:not([id^="BMB"]),
+popupset >*:not(menupopup) menupopup :-moz-any([disabled="true"])[_moz-menuactive="true"],
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup :-moz-any([disabled="true"])[_moz-menuactive="true"],
+#do-not-styled-PlacesToolbar :-moz-any([disabled="true"])[_moz-menuactive="true"],
+#main-menubar menupopup :-moz-any([disabled="true"])[_moz-menuactive="true"],
+#sourceeditor-context :-moz-any([disabled="true"])[_moz-menuactive="true"]
+#lpt_site-context-menu :-moz-any([disabled="true"])[_moz-menuactive="true"] {
+    background-color: #F2F2F2 !important;
+}
+/*For Lastpass*/
+#lpt_lastpass-compact-btn > menupopup :-moz-any(menu,menuitem)[_moz-menuactive="true"] > label.menu-iconic-text{
+    color:#000;
+}
+#lpt_comp-bar-accts > * menuitem:hover,#lpt_lastpass-compact-menu-search-vbox menuitem:hover{
+    color:#000 !important;
+}
+menupopup.textbox-contextmenu :-moz-any(menu,menuitem),
+popupset > menupopup :-moz-any(menu,menuitem),
+popupset >*:not(menupopup) menupopup :-moz-any(menu,menuitem),
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup :-moz-any(menu,menuitem),
+#do-not-styled-PlacesToolbar :-moz-any(menu,menuitem),
+#main-menubar menupopup :-moz-any(menu,menuitem),
+#sourceeditor-context :-moz-any(menu,menuitem)
+{
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+    padding-right:6px;
+    padding-left:16px !important;
+    border:1px solid transparent !important;
+    background-color:#F2F2F2 !important;
+    -moz-appearance: none !important;
+    font-size:14px;
+}
+/* For AllTabs Popup */
+#alltabs-button menupopup {
+    width: 280px !important;
+}
+#alltabs-button menu,#alltabs-button menuitem {
+    font-size:14px !important;
+    padding: 5px 0!important;
+    max-width: unset !important;
+}
+#alltabs-button menu[_moz-menuactive="true"],
+#alltabs-button menuitem[_moz-menuactive="true"]
+{
+    background-color:#dadada !important;
+		-moz-appearance: none !important;
+}
+/* For Separator */
+menupopup.textbox-contextmenu menuseparator,
+popupset > menupopup menuseparator,
+popupset > menupopup menupopup menuseparator,
+popupset >*:not(menupopup) menupopup menuseparator,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuseparator,
+#do-not-styled-PlacesToolbar menupopup menuseparator,
+#main-menubar menupopup menuseparator,
+#sourceeditor-context menuseparator
+{
+    -moz-appearance: none !important;
+    border-width: 1px 0 0 0;
+    border-color: #919191 !important;
+    padding:0px !important;
+    margin:6px 10px 7px !important;
+}
+/* Hide Menu Icon Except CheckBox and Radio*/
+menupopup.textbox-contextmenu :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+popupset > menupopup :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+popupset >*:not(menupopup) menupopup :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+#do-not-styled-PlacesToolbar menupopup :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]) > hbox.menu-iconic-left,
+#main-menubar menupopup :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+#sourceeditor-context :-moz-any(menu,menuitem):not([type="checkbox"]):not([type="radio"]):not(.bookmark-item) > hbox.menu-iconic-left,
+#context-sep-navigation,
+#context-navigation
+{
+		display: none;
+}
+/* For menuitems and menus which aren't iconized */
+menupopup.textbox-contextmenu :-moz-any(menu,menuitem) > .menu-text,
+popupset > menupopup :-moz-any(menu,menuitem) > .menu-text,
+popupset >*:not(menupopup) menupopup :-moz-any(menu,menuitem) > .menu-text,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup :-moz-any(menu,menuitem) > .menu-text,
+#do-not-styled-PlacesToolbar menupopup :-moz-any(menu,menuitem) > .menu-text,
+#main-menubar menupopup :-moz-any(menu,menuitem) > .menu-text,
+#sourceeditor-context :-moz-any(menu,menuitem) > .menu-text
+{
+    -moz-appearance: none !important;
+    padding-left:0px !important;
+}
+/* Change [checkbox/raido]s' icon */
+menuitem[type="checkbox"]>.menu-iconic-left {
+  -moz-appearance: none!important;
+  max-width: 28px!important;
+  min-width: 28px!important;
+  max-height: 22px!important;
+  min-height: 22px!important;
+  margin-left: -1px;
+}
+menuitem[type="checkbox"]>.menu-iconic-text {
+  -moz-margin-start: 5px !important;
+}
+menuitem[type="checkbox"][checked="true"]>.menu-iconic-left {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVQ4jWNgGJGAjYGBgY8SzRsZGBh2UqL5AwMDgzmpmlnpojmIgYFhOQMDAwua5g3E2mwOVbgGaghJmtENWcvAwLCeVM3ohpClGdkQsjUPMQAAdaMUDyQI7UwAAAAASUVORK5CYII=) no-repeat center!important;
+}
+menuitem[type="checkbox"]:active>.menu-iconic-left {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqUlEQVQ4jeXOvQ6CMBSG4ZO4uJtI9IoYDLp0cept0Kl3QEl/WKAUvkljnLgk5TqcSBwYKJvxnc/z5RD9X3me74qiOKzCUsq9c+6utQbnfBuNjTE3Y8xba31ZjcuyPM8eMcY2c28twkREbdteAYSmaY7RmIjIe38CMAJ4KqUSIUTinHsswlMhhKzv+xeAwVo7ROHvka7rxqqqRqVUFoWn6rpOrbXpKvx7fQBKM2R8tj0QUgAAAABJRU5ErkJggg==) no-repeat center!important;
+}
+menuitem[type="radio"] .menu-iconic-left {
+  -moz-appearance: none!important;
+  min-width: 29px!important;
+  max-width: 29px!important;
+  min-height: 22px!important;
+  max-height: 22px!important;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABa0lEQVQ4jY1TsWrDQAxN0iUZCoUmn5ClU8kX+A86eWghwT/g4JKcztmMoYttnSFQbJ2h22XK6H/I0KWFBkK+oJB8RBf7GlrbieA4IZ3eSU9Sq9Us7eJcLqYQPTdMDMDMZ7FcsViuADPfDRPDFKLXGDwN0iFHUiyibybonWGyZpisWZR8ckFHjqSmQTqsDQaUmznSxzzMHgDguvQ5nnczC7JHELQHlJt/IJZldTmSAiG/7OXbXV2GzsvrPcTZjiMpy7K62uGGiQFCHp4FPZ3jiAXpBIQ8uGFiaCNg5jOk7WKxuK2J052w7eWAIW0BM187OZLigvIzn3fKmwvKOZIqgasA/va+3QSgS7Dt5aCMME3zqnjQLvTaEjSJLEgnFWl3Tg2VJOo2xtnOiWlUR4IT06iyja3W7yCBoD1EcjzzvH6Zwczz+hDJce0gnYIUhB4Z0pYLyrmgvNCbR1mTd7JMHElxJHXxMlXI2XX+ARMT2FnwfjZRAAAAAElFTkSuQmCC) no-repeat center!important;
+}
+menuitem[type="radio"][checked="true"] .menu-iconic-left {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVQ4jaVTS4rCQBBtJQu9QDyBN/AAfQXN2s/STSJC1GqyabIV0tUrha5axhPkDu5FQbyC3sFZaIbAjI5MHjQ0r7se9XtCvEfjeT7HPMvaYJwEwykg7wB5B4ZTME7Os6z9Nnhht12FlIPlm7J8AksFWCoed74ppHxht92XwWBpD8iXFbpRvN74UmtPau3F642/QjcC5AtY2v8QmWjdUkg5IJ2XGfdeZbjMuAdIZ4WUT7RufT+AcRKQrsrSuPK/2Z/Gfn8a+0KIZkkqS2NAuoJxsiLAqbJ8mqHrlNwgUsMgTI5BmBwHkRqW/AxdR1k+geG05BqPxlEhtfaEEKI/jf0gTA5BlNyDKLkHYXJ4ZiKk1h5YKhRSLp4jri1Qu4T6Taw9RiFqLlJV5N+rXKJqJoWUK6T8YzP9gj/t/AXDERCiII6BTwAAAABJRU5ErkJggg==) no-repeat center!important;
+}
+menuitem[type="radio"]:active .menu-iconic-left {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVQ4jaVTS4rCQBBtJQu9QDyBN/AAfQXN2s/STSJC1GqyabIV0tUrha5axhPkDu5FQbyC3sFZaIbAjI5MHjQ0r7se9XtCvEfjeT7HPMvaYJwEwykg7wB5B4ZTME7Os6z9Nnhht12FlIPlm7J8AksFWCoed74ppHxht92XwWBpD8iXFbpRvN74UmtPau3F642/QjcC5AtY2v8QmWjdUkg5IJ2XGfdeZbjMuAdIZ4WUT7RufT+AcRKQrsrSuPK/2Z/Gfn8a+0KIZkkqS2NAuoJxsiLAqbJ8mqHrlNwgUsMgTI5BmBwHkRqW/AxdR1k+geG05BqPxlEhtfaEEKI/jf0gTA5BlNyDKLkHYXJ4ZiKk1h5YKhRSLp4jri1Qu4T6Taw9RiFqLlJV5N+rXKJqJoWUK6T8YzP9gj/t/AXDERCiII6BTwAAAABJRU5ErkJggg==) no-repeat center!important;
+}
+/* Checkbox/Radio order */
+menupopup.textbox-contextmenu menuitem[type="checkbox"] > .menu-iconic-text,
+menupopup.textbox-contextmenu menuitem[type="radio"] > .menu-iconic-text,
+popupset > menupopup menuitem[type="checkbox"] > .menu-iconic-text,
+popupset > menupopup menuitem[type="radio"] > .menu-iconic-text,
+popupset > menupopup menupopup menuitem[type="checkbox"] > .menu-iconic-text,
+popupset > menupopup menupopup menuitem[type="radio"] > .menu-iconic-text,
+popupset >*:not(menupopup) menupopup menuitem[type="checkbox"] > .menu-iconic-text,
+popupset >*:not(menupopup) menupopup menuitem[type="radio"] > .menu-iconic-text,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="checkbox"] > .menu-iconic-text,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="radio"] > .menu-iconic-text,
+#main-menubar menupopup menuitem[type="checkbox"] > .menu-iconic-text,
+#main-menubar menupopup menuitem[type="radio"] > .menu-iconic-text,
+#sourceeditor-context menuitem[type="checkbox"] > .menu-iconic-text,
+#sourceeditor-context menuitem[type="radio"] > .menu-iconic-text
+{
+    -moz-box-ordinal-group: 1;
+    margin-left: 2px !important;
+
+}
+menupopup.textbox-contextmenu menuitem[type="checkbox"] > .menu-accel-container,
+menupopup.textbox-contextmenu menuitem[type="radio"] > .menu-accel-container,
+popupset > menupopup menuitem[type="checkbox"] > .menu-accel-container,
+popupset > menupopup menuitem[type="radio"] > .menu-accel-container,
+popupset > menupopup menupopup menuitem[type="checkbox"] > .menu-accel-container,
+popupset > menupopup menupopup menuitem[type="radio"] > .menu-accel-container,
+popupset >*:not(menupopup) menupopup menuitem[type="checkbox"] > .menu-accel-container,
+popupset >*:not(menupopup) menupopup menuitem[type="radio"] > .menu-accel-container,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="checkbox"] > .menu-accel-container,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="radio"] > .menu-accel-container,
+#main-menubar menupopup menuitem[type="checkbox"] > .menu-accel-container,
+#main-menubar menupopup menuitem[type="radio"] > .menu-accel-container,
+#sourceeditor-context menuitem[type="checkbox"] > .menu-accel-container,
+#sourceeditor-context menuitem[type="radio"] > .menu-accel-container
+{
+    -moz-box-ordinal-group: 2;
+}
+menupopup.textbox-contextmenu menuitem[type="checkbox"] > .menu-iconic-left,
+menupopup.textbox-contextmenu menuitem[type="radio"] > .menu-iconic-left,
+popupset > menupopup menuitem[type="checkbox"] > .menu-iconic-left,
+popupset > menupopup menuitem[type="radio"] > .menu-iconic-left,
+popupset > menupopup menupopup menuitem[type="checkbox"] > .menu-iconic-left,
+popupset > menupopup menupopup menuitem[type="radio"] > .menu-iconic-left,
+popupset >*:not(menupopup) menupopup menuitem[type="checkbox"] > .menu-iconic-left,
+popupset >*:not(menupopup) menupopup menuitem[type="radio"] > .menu-iconic-left,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="checkbox"] > .menu-iconic-left,
+toolbarbutton:not(#bookmarks-menu-button):not(#alltabs-button):not(.bookmark-item)  menupopup menuitem[type="radio"] > .menu-iconic-left,
+#main-menubar menupopup menuitem[type="checkbox"] > .menu-iconic-left,
+#main-menubar menupopup menuitem[type="radio"] > .menu-iconic-left,
+#sourceeditor-context menuitem[type="checkbox"] > .menu-iconic-left,
+#sourceeditor-context menuitem[type="radio"] > .menu-iconic-left
+{
+     -moz-box-ordinal-group: 3;
+}
